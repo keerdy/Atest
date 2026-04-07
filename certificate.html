@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>汉语二级证明</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: "SimSun", "宋体", "Noto Serif SC", serif;
+            background: linear-gradient(135deg, #f5f0e8 0%, #e8dcc8 100%);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+        .certificate {
+            background: #fff;
+            border: 3px solid #8b0000;
+            border-radius: 10px;
+            padding: 50px 60px;
+            max-width: 700px;
+            width: 100%;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.15);
+            position: relative;
+        }
+        .certificate::before {
+            content: "";
+            position: absolute;
+            top: 10px; left: 10px; right: 10px; bottom: 10px;
+            border: 1px solid #8b0000;
+            border-radius: 6px;
+            pointer-events: none;
+        }
+        .header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        .emblem {
+            font-size: 48px;
+            margin-bottom: 10px;
+        }
+        .title {
+            font-size: 36px;
+            font-weight: bold;
+            color: #8b0000;
+            letter-spacing: 8px;
+            margin-bottom: 5px;
+        }
+        .subtitle {
+            font-size: 14px;
+            color: #666;
+            letter-spacing: 4px;
+        }
+        .divider {
+            border: none;
+            border-top: 2px solid #8b0000;
+            margin: 25px 0;
+        }
+        .content {
+            text-align: center;
+            line-height: 2.2;
+            color: #333;
+        }
+        .name {
+            font-size: 28px;
+            font-weight: bold;
+            margin: 20px 0;
+            color: #222;
+        }
+        .info {
+            font-size: 16px;
+            color: #555;
+            margin: 15px 0;
+        }
+        .footer {
+            margin-top: 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+        }
+        .seal {
+            width: 90px;
+            height: 90px;
+            border: 3px solid #8b0000;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 14px;
+            color: #8b0000;
+            font-weight: bold;
+            text-align: center;
+            line-height: 1.3;
+            transform: rotate(-15deg);
+            margin-left: auto;
+        }
+        .date {
+            color: #666;
+            font-size: 14px;
+        }
+        @media print {
+            body { background: white; }
+            .certificate { box-shadow: none; border: 2px solid #8b0000; }
+        }
+    </style>
+</head>
+<body>
+    <div class="certificate">
+        <div class="header">
+            <div class="emblem">🏛️</div>
+            <div class="title">汉 语 水 平 证 书</div>
+            <div class="subtitle">CHINESE PROFICIENCY CERTIFICATE</div>
+        </div>
+
+        <hr class="divider">
+
+        <div class="content">
+            <p>兹证明</p>
+            <div class="name">某某某</div>
+            <p>已通过汉语水平二级考试，成绩合格</p>
+            <p>具备良好的中文听、说、读、写能力</p>
+
+            <div class="info">
+                <p>考试编号：HSK-2026-XXXXX</p>
+                <p>考试日期：2026 年 XX 月 XX 日</p>
+            </div>
+        </div>
+
+        <hr class="divider">
+
+        <div class="footer">
+            <div class="date">
+                <p>发证日期：2026 年 XX 月 XX 日</p>
+            </div>
+            <div class="seal">
+                汉语水平<br>考试委员会
+            </div>
+        </div>
+    </div>
+</body>
+</html>

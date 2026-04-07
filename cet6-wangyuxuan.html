@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>全国大学英语六级考试成绩报告单</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: "SimHei", "Microsoft YaHei", "黑体", Arial, sans-serif;
+            background: #f0f0f0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px;
+        }
+        .report {
+            background: #fff;
+            width: 800px;
+            border: 1px solid #ccc;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            padding: 0;
+        }
+        .top-bar {
+            background: #c8000a;
+            color: #fff;
+            font-size: 13px;
+            padding: 6px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .top-bar .logo { font-weight: bold; font-size: 14px; }
+        .top-bar .url { font-size: 12px; opacity: 0.9; }
+
+        .header {
+            background: #c8000a;
+            color: #fff;
+            text-align: center;
+            padding: 20px 40px 16px;
+        }
+        .header .subtitle {
+            font-size: 12px;
+            letter-spacing: 3px;
+            opacity: 0.85;
+            margin-bottom: 6px;
+        }
+        .header .main-title {
+            font-size: 28px;
+            font-weight: bold;
+            letter-spacing: 6px;
+        }
+        .header .exam-type {
+            font-size: 18px;
+            letter-spacing: 8px;
+            margin-top: 6px;
+        }
+
+        .info-section {
+            padding: 24px 40px;
+            border-bottom: 3px solid #c8000a;
+        }
+        .info-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 12px 40px;
+        }
+        .info-item {
+            display: flex;
+            font-size: 14px;
+            line-height: 1.8;
+        }
+        .info-label {
+            color: #555;
+            width: 80px;
+            flex-shrink: 0;
+        }
+        .info-value {
+            color: #111;
+            font-weight: bold;
+        }
+
+        .score-section {
+            padding: 20px 40px 24px;
+            border-bottom: 3px solid #c8000a;
+        }
+        .score-title {
+            font-size: 14px;
+            color: #555;
+            margin-bottom: 14px;
+            padding-left: 4px;
+        }
+        .score-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 0;
+            border: 1px solid #c8000a;
+        }
+        .score-box {
+            text-align: center;
+            padding: 14px 8px;
+            border-right: 1px solid #c8000a;
+        }
+        .score-box:last-child { border-right: none; }
+        .score-box .label {
+            font-size: 12px;
+            color: #666;
+            margin-bottom: 6px;
+        }
+        .score-box .value {
+            font-size: 26px;
+            font-weight: bold;
+            color: #c8000a;
+        }
+        .score-box.total .value {
+            font-size: 32px;
+        }
+        .score-box .full {
+            font-size: 11px;
+            color: #999;
+        }
+
+        .photo-section {
+            padding: 20px 40px;
+            display: flex;
+            align-items: flex-start;
+            gap: 30px;
+            border-bottom: 1px solid #ddd;
+        }
+        .photo-placeholder {
+            width: 80px;
+            height: 100px;
+            border: 1px solid #ccc;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 11px;
+            color: #999;
+            flex-shrink: 0;
+            background: #fafafa;
+        }
+        .id-info {
+            flex: 1;
+        }
+        .id-row {
+            display: flex;
+            font-size: 13px;
+            line-height: 2;
+        }
+        .id-row .label { color: #555; width: 80px; }
+        .id-row .value { color: #111; }
+
+        .bottom-section {
+            padding: 16px 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+            background: #fafafa;
+        }
+        .bottom-left {
+            font-size: 11px;
+            color: #888;
+            line-height: 1.8;
+        }
+        .seal-area {
+            text-align: center;
+        }
+        .seal-circle {
+            width: 80px;
+            height: 80px;
+            border: 2px solid #c8000a;
+            border-radius: 50%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            font-size: 10px;
+            color: #c8000a;
+            font-weight: bold;
+            line-height: 1.5;
+            margin-bottom: 4px;
+        }
+        .seal-text {
+            font-size: 10px;
+            color: #888;
+        }
+        @media print {
+            body { background: white; }
+            .report { box-shadow: none; border: none; }
+        }
+    </style>
+</head>
+<body>
+    <div class="report">
+        <div class="top-bar">
+            <span class="logo">教育部教育考试院</span>
+            <span class="url">cet.neea.edu.cn</span>
+        </div>
+        <div class="header">
+            <div class="subtitle">NATIONAL COLLEGE ENGLISH TEST</div>
+            <div class="main-title">全国大学英语四、六级考试</div>
+            <div class="exam-type">笔试成绩报告单</div>
+        </div>
+        <div class="info-section">
+            <div class="info-grid">
+                <div class="info-item">
+                    <span class="info-label">姓　　名</span>
+                    <span class="info-value">王雨轩</span>
+                </div>
+                <div class="info-item">
+                    <span class="info-label">性　　别</span>
+                    <span class="info-value">女</span>
+                </div>
+                <div class="info-item">
+                    <span class="info-label">学校名称</span>
+                    <span class="info-value">****************</span>
+                </div>
+                <div class="info-item">
+                    <span class="info-label">考试级别</span>
+                    <span class="info-value">CET-6</span>
+                </div>
+                <div class="info-item">
+                    <span class="info-label">考试类别</span>
+                    <span class="info-value">笔试</span>
+                </div>
+                <div class="info-item">
+                    <span class="info-label">考试日期</span>
+                    <span class="info-value">2025年12月14日</span>
+                </div>
+            </div>
+        </div>
+        <div class="score-section">
+            <div class="score-title">笔试成绩</div>
+            <div class="score-grid">
+                <div class="score-box">
+                    <div class="label">听力</div>
+                    <div class="value">200</div>
+                    <div class="full">满分 248.5</div>
+                </div>
+                <div class="score-box">
+                    <div class="label">阅读</div>
+                    <div class="value">220</div>
+                    <div class="full">满分 248.5</div>
+                </div>
+                <div class="score-box">
+                    <div class="label">写作和翻译</div>
+                    <div class="value">246</div>
+                    <div class="full">满分 212</div>
+                </div>
+                <div class="score-box total">
+                    <div class="label">总分</div>
+                    <div class="value">666</div>
+                    <div class="full">满分 710</div>
+                </div>
+            </div>
+        </div>
+        <div class="photo-section">
+            <div class="photo-placeholder">证件照片</div>
+            <div class="id-info">
+                <div class="id-row">
+                    <span class="label">报名证件号</span>
+                    <span class="value">******************</span>
+                </div>
+                <div class="id-row">
+                    <span class="label">证书编号</span>
+                    <span class="value">CET6122025XXXXXXXX</span>
+                </div>
+            </div>
+        </div>
+        <div class="bottom-section">
+            <div class="bottom-left">
+                <p>本成绩报告单等同于纸质成绩报告单，与纸质成绩报告单同等效力。</p>
+                <p>教育部教育考试院</p>
+            </div>
+            <div class="seal-area">
+                <div class="seal-circle">
+                    教育部<br>教育考试院
+                </div>
+                <div class="seal-text">制证专用章</div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
